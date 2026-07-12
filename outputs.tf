@@ -1,4 +1,9 @@
 # --- azurerm_datadog_monitor ---
+output "datadog_monitors_id" {
+  description = "Map of id values across all datadog_monitors, keyed the same as var.datadog_monitors"
+  value       = module.datadog_monitors.datadog_monitors_id
+}
+
 output "datadog_monitors_datadog_organization" {
   description = "Map of datadog_organization values across all datadog_monitors, keyed the same as var.datadog_monitors"
   value       = module.datadog_monitors.datadog_monitors_datadog_organization
@@ -51,6 +56,11 @@ output "datadog_monitors_user" {
 }
 
 # --- azurerm_datadog_monitor_sso_configuration ---
+output "datadog_monitor_sso_configurations_id" {
+  description = "Map of id values across all datadog_monitor_sso_configurations, keyed the same as var.datadog_monitor_sso_configurations"
+  value       = module.datadog_monitor_sso_configurations.datadog_monitor_sso_configurations_id
+}
+
 output "datadog_monitor_sso_configurations_datadog_monitor_id" {
   description = "Map of datadog_monitor_id values across all datadog_monitor_sso_configurations, keyed the same as var.datadog_monitor_sso_configurations"
   value       = module.datadog_monitor_sso_configurations.datadog_monitor_sso_configurations_datadog_monitor_id
@@ -82,6 +92,11 @@ output "datadog_monitor_sso_configurations_single_sign_on_enabled" {
 }
 
 # --- azurerm_datadog_monitor_tag_rule ---
+output "datadog_monitor_tag_rules_id" {
+  description = "Map of id values across all datadog_monitor_tag_rules, keyed the same as var.datadog_monitor_tag_rules"
+  value       = module.datadog_monitor_tag_rules.datadog_monitor_tag_rules_id
+}
+
 output "datadog_monitor_tag_rules_datadog_monitor_id" {
   description = "Map of datadog_monitor_id values across all datadog_monitor_tag_rules, keyed the same as var.datadog_monitor_tag_rules"
   value       = module.datadog_monitor_tag_rules.datadog_monitor_tag_rules_datadog_monitor_id
