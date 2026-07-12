@@ -57,23 +57,23 @@ EOT
     })))
     datadog_monitor_tag_rules = optional(map(object({
       name = optional(string) # Default: "default"
-      log = optional(object({
+      log = optional(list(object({
         aad_log_enabled = optional(bool)
-        filter = optional(object({
+        filter = optional(list(object({
           action = string
           name   = string
           value  = string
-        }))
+        })))
         resource_log_enabled     = optional(bool)
         subscription_log_enabled = optional(bool)
-      }))
-      metric = optional(object({
-        filter = optional(object({
+      })))
+      metric = optional(list(object({
+        filter = optional(list(object({
           action = string
           name   = string
           value  = string
-        }))
-      }))
+        })))
+      })))
     })))
   }))
 
