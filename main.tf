@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.datadog_monitors : {
       for k2, v2 in coalesce(v1.datadog_monitor_sso_configurations, {}) :
       "${k1}/${k2}" => merge(v2, {
-        datadog_monitor_id = module.datadog_monitors.datadog_monitors["${k1}"].id
+        datadog_monitor_id = module.datadog_monitors.datadog_monitors_id["${k1}"]
       })
     }
   ]...)
@@ -14,7 +14,7 @@ locals {
     for k1, v1 in var.datadog_monitors : {
       for k2, v2 in coalesce(v1.datadog_monitor_tag_rules, {}) :
       "${k1}/${k2}" => merge(v2, {
-        datadog_monitor_id = module.datadog_monitors.datadog_monitors["${k1}"].id
+        datadog_monitor_id = module.datadog_monitors.datadog_monitors_id["${k1}"]
       })
     }
   ]...)
