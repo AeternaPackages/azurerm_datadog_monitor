@@ -31,7 +31,7 @@ EOT
     name                = string
     resource_group_name = string
     sku_name            = string
-    monitoring_enabled  = optional(bool) # Default: true
+    monitoring_enabled  = optional(bool)
     tags                = optional(map(string))
     datadog_organization = object({
       api_key           = string
@@ -51,12 +51,12 @@ EOT
     }))
     datadog_monitor_sso_configurations = optional(map(object({
       enterprise_application_id = string
-      name                      = optional(string) # Default: "default"
+      name                      = optional(string)
       single_sign_on            = optional(string)
       single_sign_on_enabled    = optional(string)
     })))
     datadog_monitor_tag_rules = optional(map(object({
-      name = optional(string) # Default: "default"
+      name = optional(string)
       log = optional(list(object({
         aad_log_enabled = optional(bool)
         filter = optional(list(object({
