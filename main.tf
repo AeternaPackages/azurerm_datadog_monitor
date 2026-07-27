@@ -21,18 +21,18 @@ locals {
 }
 
 module "datadog_monitors" {
-  source           = "git::https://github.com/AeternaModules/azurerm_datadog_monitor.git?ref=v4.80.0"
+  source           = "git::https://github.com/AeternaModules/azurerm_datadog_monitor.git?ref=v4.81.0"
   datadog_monitors = local.datadog_monitors
 }
 
 module "datadog_monitor_sso_configurations" {
-  source                             = "git::https://github.com/AeternaModules/azurerm_datadog_monitor_sso_configuration.git?ref=v4.80.0"
+  source                             = "git::https://github.com/AeternaModules/azurerm_datadog_monitor_sso_configuration.git?ref=v4.81.0"
   datadog_monitor_sso_configurations = local.datadog_monitor_sso_configurations
   depends_on                         = [module.datadog_monitors]
 }
 
 module "datadog_monitor_tag_rules" {
-  source                    = "git::https://github.com/AeternaModules/azurerm_datadog_monitor_tag_rule.git?ref=v4.80.0"
+  source                    = "git::https://github.com/AeternaModules/azurerm_datadog_monitor_tag_rule.git?ref=v4.81.0"
   datadog_monitor_tag_rules = local.datadog_monitor_tag_rules
   depends_on                = [module.datadog_monitors]
 }
