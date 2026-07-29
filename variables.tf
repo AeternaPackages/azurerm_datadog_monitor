@@ -15,10 +15,9 @@ Optional:
 Nested datadog_monitor_sso_configurations (azurerm_datadog_monitor_sso_configuration):
     Required:
         - enterprise_application_id
+        - single_sign_on
     Optional:
         - name
-        - single_sign_on
-        - single_sign_on_enabled
 Nested datadog_monitor_tag_rules (azurerm_datadog_monitor_tag_rule):
     Optional:
         - name
@@ -51,9 +50,8 @@ EOT
     }))
     datadog_monitor_sso_configurations = optional(map(object({
       enterprise_application_id = string
+      single_sign_on            = string
       name                      = optional(string)
-      single_sign_on            = optional(string)
-      single_sign_on_enabled    = optional(string)
     })))
     datadog_monitor_tag_rules = optional(map(object({
       name = optional(string)

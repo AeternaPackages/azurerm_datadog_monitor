@@ -86,11 +86,6 @@ output "datadog_monitor_sso_configurations_single_sign_on" {
   value       = module.datadog_monitor_sso_configurations.datadog_monitor_sso_configurations_single_sign_on
 }
 
-output "datadog_monitor_sso_configurations_single_sign_on_enabled" {
-  description = "Map of single_sign_on_enabled values across all datadog_monitor_sso_configurations, keyed the same as var.datadog_monitor_sso_configurations"
-  value       = module.datadog_monitor_sso_configurations.datadog_monitor_sso_configurations_single_sign_on_enabled
-}
-
 # --- azurerm_datadog_monitor_tag_rule ---
 output "datadog_monitor_tag_rules_id" {
   description = "Map of id values across all datadog_monitor_tag_rules, keyed the same as var.datadog_monitor_tag_rules"
